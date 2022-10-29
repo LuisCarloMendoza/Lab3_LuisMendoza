@@ -13,7 +13,7 @@ public class Lab3P1_LuisMendoza {
         
         Scanner entrada = new Scanner(System.in);
         
-        double z =1;
+        
         
         
         do{
@@ -25,16 +25,10 @@ public class Lab3P1_LuisMendoza {
             int opcionUsuario = entrada.nextInt();
             double dividend = 0;
             double divisor = 0;
-            double factorial = 0;
-            double m = 1;
-            double n = 1;
-            double fullFraction1 = 0;
-            double fullFraction2= 0;
-            double multiple = 0;
-            double l = 3;
-
-            if (opcionUsuario == 1) {
-                
+            double fraction = 0;
+            
+          
+               if (opcionUsuario == 1){          
                System.out.println("Ingrese un codigo formato letra-numero-letra...");
                System.out.println("");
                String s = entrada.nextLine();
@@ -63,26 +57,26 @@ public class Lab3P1_LuisMendoza {
             } else if (opcionUsuario == 2) {
 
                 System.out.println("Ingrese el valor de k: ");
-                double k = entrada.nextDouble();
+                double k = entrada.nextInt();
                 
-                for (n = 1; n <= k; n+=1){
+                for (double n = 1; n <= k; n++){
                     
                      dividend = (2*n) + 1;
                      
                      divisor = (n*n) + 3; 
                      
-                     factorial = divisor * (divisor - n);
+                     double factorial = 1;
                      
-                     while (n + 2 <= divisor){
-                         m++;
-                         factorial = factorial * (divisor - m);
+                     for (double z = divisor; z > 0; z--){
                          
+                         factorial = factorial * z; 
                      } System.out.println(factorial);
+                     
+                      fraction += dividend/factorial;
                       
-                    
                 }
-                fullFraction1 += (dividend) / (factorial);
-                 
+                
+                System.out.println(fraction);
                         
                
                 
